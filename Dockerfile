@@ -17,7 +17,7 @@ RUN ./mvnw dependency:go-offline
 
 # Copy source code and build the JAR
 COPY src ./src
-RUN ./mvnw clean package -DskipTests
+RUN ./mvnw clean package -Dmaven.test.skip=true
 
 # Stage 2: Run the application
 FROM eclipse-temurin:21-jre
